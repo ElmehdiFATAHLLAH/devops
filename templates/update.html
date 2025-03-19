@@ -4,23 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Student</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+       
+        @media (max-width: 767px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Update Student</h1>
-    <form method="POST">
-        <label for="first_name">First Name:</label>
-        <input type="text" name="first_name" value="{{ student['first_name'] }}" required><br><br>
 
-        <label for="last_name">Last Name:</label>
-        <input type="text" name="last_name" value="{{ student['last_name'] }}" required><br><br>
+    <div class="container">
+        <div class="header">
+            <h1>Update Student</h1>
+        </div>
 
-        <label for="age">Age:</label>
-        <input type="number" name="age" value="{{ student['age'] }}" required><br><br>
+        <form method="POST">
+            <div class="form-group">
+                <label for="first_name" class="form-label">First Name:</label>
+                <input type="text" name="first_name" class="form-control" value="{{ student['first_name'] }}" required>
+            </div>
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" value="{{ student['email'] }}" required><br><br>
+            <div class="form-group">
+                <label for="last_name" class="form-label">Last Name:</label>
+                <input type="text" name="last_name" class="form-control" value="{{ student['last_name'] }}" required>
+            </div>
 
-        <button type="submit">Update</button>
-    </form>
+            <div class="form-group">
+                <label for="age" class="form-label">Age:</label>
+                <input type="number" name="age" class="form-control" value="{{ student['age'] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" name="email" class="form-control" value="{{ student['email'] }}" required>
+            </div>
+
+            <button type="submit" class="btn-primary">Update</button>
+        </form>
+    </div>
+
 </body>
 </html>

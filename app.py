@@ -6,9 +6,9 @@ app = Flask(__name__)
 metrics = PrometheusMetrics(app)
 
 db_config = {
-    'host': 'mysql_db',
+    'host': 'localhost',
     'user': 'root',
-    'password': 'rootpassword',
+    'password': '',
     'database': 'students_db'
 }
 
